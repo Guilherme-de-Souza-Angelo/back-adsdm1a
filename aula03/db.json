@@ -1,0 +1,22 @@
+{
+  "produtos": [
+    {
+      "id": "2",
+      "nome": "laranja",
+      "preco": 20
+    },
+    {
+      "id": "3",
+      "nome": "maça",
+      "preco": 18
+    },
+    {
+      "id": "d0dc"
+    },
+    {
+      "id": "0e25",
+      "nome": "uva",
+      "preco": 30
+    }
+  ]
+}
