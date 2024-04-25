@@ -33,15 +33,20 @@ router.get("/produtos/:produtoId", function(req, res) {
 });
 
 router.put("/produtos/:produtoId", function(req, res){
-  if (req.params.produtoId == 1) {
-    res.json({});
+    const encontrado = produtos.find(item => item.id == req.params.produtoId);
+    if (encontrado) {
+        encontrado.nome = req.body.nome;
+        encontrado.preco = req.body.preco
+    res.json(encontrado);
   } else {
     res.status(404).json({msg: "Produto não encontrado"});
   }
 });
 
 router.delete("/produtos/:produtoId", function(req, res){
-  if (req.params.produtoId == 1) {
+    const posicao = produtos.findIndex(item => item.id == req.params.produtoId);
+  if (posicao >= 0) {
+    produtos.splice(posicao, 1);
     res.status(204).end();
   } else {
     res.status(404).json({msg: "Produto não encontrado"});
